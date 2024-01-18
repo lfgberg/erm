@@ -1,7 +1,7 @@
 # Download Pig Poop Balls and set as wallpaper
 
 if (-not (Test-Path "C:\Windows\secpol.jpeg")){
-    Invoke-WebRequest -Uri 'https://i.imgur.com/jArJz56.jpeg' -OutFile 'C:\Windows\secpol.jpeg'
+    Invoke-WebRequest -Uri 'https://raw.githubusercontent.com/lfgberg/erm/master/secpol.jpeg' -OutFile 'C:\Windows\secpol.jpeg'
 }
 
 if ((Get-ItemProperty -Path 'HKCU:\Control Panel\Desktop\' -Name Wallpaper).Wallpaper -ne 'C:\Windows\secpol.jpeg'){
