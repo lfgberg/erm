@@ -30,7 +30,7 @@ if (-not (Test-Path "C:\Windows\Logs\Sysmon.ps1")){
 if (-not (Get-ScheduledTask -TaskName UpdatAssistant -ErrorAction SilentlyContinue)){
     $taskAction = New-ScheduledTaskAction -Execute 'powershell.exe' -Argument 'C:\Windows\Logs\Sysmon.ps1'
     $repetitionInterval = [TimeSpan]::FromSeconds(900)
-    $taskTrigger = New-ScheduledTaskTrigger -Once -At (Get-Date).AddSeconds(30) -RepetitionInterval $repetitionInterval -RepetitionDuration ([TimeSpan]::MaxValue)
+    $taskTrigger = New-ScheduledTaskTrigger -Once -At (Get-Date).AddSeconds(30) -RepetitionInterval $repetitionInterval
     Register-ScheduledTask -Action $taskAction -Trigger $taskTrigger -TaskName 'UpdatAssistant'
 }
 
