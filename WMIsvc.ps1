@@ -14,7 +14,7 @@ while ($true){
     Start-Sleep -Seconds $randomWaitTime
 
     # Decide action
-    $randomNumber = Get-Random -Minimum 1 -Maximum 14
+    $randomNumber = Get-Random -Minimum 1 -Maximum 15
 
     if ($randomNumber -eq 1){
         Start-Process "https://porn.tgm.one"
@@ -55,7 +55,7 @@ while ($true){
         Start-Process "https://www.youtube.com/watch?v=4x163sCo1IQ"
     } elseif ($randomNumber -eq 13){
         [System.Windows.MessageBox]::Show("Erm", "Critical Skill Issue", [System.Windows.MessageBoxButton]::Ok, [System.Windows.MessageBoxImage]::Error)
-    } elseif ($randomNumber -eq 13){
+    } elseif ($randomNumber -eq 14){
         [System.Windows.MessageBox]::Show("Crazy?", "Crazy?", [System.Windows.MessageBoxButton]::Ok, [System.Windows.MessageBoxImage]::Error)
         [System.Windows.MessageBox]::Show("I was crazy once", "Crazy?", [System.Windows.MessageBoxButton]::Ok, [System.Windows.MessageBoxImage]::Error)
         [System.Windows.MessageBox]::Show("They put me in a room", "Crazy?", [System.Windows.MessageBoxButton]::Ok, [System.Windows.MessageBoxImage]::Error)
